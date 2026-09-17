@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+</head>
+<body>
+    <h1>Hello from Frontend!</h1>
+    <p id="api-response">Loading...</p>
+
+    <script>
+        fetch('/api')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('api-response').innerText = data.message;
+            })
+            .catch(err => {
+                document.getElementById('api-response').innerText = 'API error';
+            });
+    </script>
+</body>
+</html>
